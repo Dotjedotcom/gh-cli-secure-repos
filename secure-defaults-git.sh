@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-: "${ORG:?Set ORG env var, e.g. export ORG='dotjedotcom'}"
+: "${ORG:?Set ORG env var, e.g. export ORG='my-org'}"
 
 # Fetch all repos in the org (adjust --visibility if you want only private/public/internal)
 mapfile -t REPOS < <(gh repo list "$ORG" --limit 1000 --json nameWithOwner --jq '.[].nameWithOwner')
